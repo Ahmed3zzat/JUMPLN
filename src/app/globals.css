@@ -40,3 +40,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.active {
+  color: white; 
+  font-weight: bold;
+  padding: 2px 5px;
+  background-color: #cc2424;
+  border-radius: 5px ;
+}
+
