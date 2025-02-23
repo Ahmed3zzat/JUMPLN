@@ -114,7 +114,7 @@ const userSlice = createSlice({
       toast.error("Icorrect Email or Password");
       toast.dismiss(prevState.idToast);
     });
-    builder.addCase(signup.pending, (prevState, action) => {
+    builder.addCase(signup.pending, (prevState) => {
       prevState.isLoading = true;
       prevState.isError = false;
       // console.log("🚴‍♀️");

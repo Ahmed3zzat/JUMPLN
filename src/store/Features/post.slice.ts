@@ -1,7 +1,7 @@
 import { postState } from "@/types/posts.types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 export const getPosts = createAsyncThunk("posts/getPosts", async (_, store) => {
   const state: any = store.getState();
@@ -71,7 +71,7 @@ const postSlice = createSlice({
       // console.log(action.payload);
       prevState.postUser = action.payload;
     });
-    builder.addCase(getUserPosts.rejected, (prevState, action) => {
+    builder.addCase(getUserPosts.rejected, () => {
       // console.log("❌");
       // console.log(action);
     });
@@ -79,7 +79,7 @@ const postSlice = createSlice({
       // console.log(action.payload);
       prevState.posts = action.payload;
     });
-    builder.addCase(getPosts.rejected, (prevState, action) => {
+    builder.addCase(getPosts.rejected, () => {
       // console.log("❌");
       // console.log(action);
     });
@@ -88,7 +88,7 @@ const postSlice = createSlice({
       // console.log(action);
       prevState.postDetails = action.payload;
     });
-    builder.addCase(getPostDetails.rejected, (prevState, action) => {
+    builder.addCase(getPostDetails.rejected, () => {
       // console.log("❌");
       // console.log(action);
     });

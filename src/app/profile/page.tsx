@@ -18,7 +18,7 @@ import axios from "axios";
 import Loading from "@/components/Loading/Loading";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { jwtDecode } from "jwt-decode";
-import PostForm from "@/components/PostForm/PostForm";
+// import PostForm from "@/components/PostForm/PostForm";
 import PostCard from "@/components/PostCard/PostCard";
 import { getUserPosts } from "@/store/Features/post.slice";
 
@@ -37,7 +37,7 @@ const VisuallyHiddenInput = styled("input")({
 export default function Profile() {
   const { token } = useAppSelector((store) => store.userS);
   const [data, setData] = useState(null);
-  const [UserPosts, setUserPosts] = useState(null);
+  // const [UserPosts, setUserPosts] = useState(null);
   const [loading, setLoading] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -65,7 +65,7 @@ export default function Profile() {
     }
   };
 
-  const handleFileChange = async (event) => {
+  const handleFileChange = async (event:any) => {
     const file = event.target.files?.[0];
     if (file) {
       const formData = new FormData();
@@ -79,7 +79,7 @@ export default function Profile() {
           data: formData,
           headers: { token },
         };
-        const { data } = await axios.request(options);
+         await axios.request(options);
         setSnackbarMessage("Photo uploaded successfully!");
         setSnackbarSeverity("success");
         setSnackbarOpen(true);

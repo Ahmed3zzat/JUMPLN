@@ -24,8 +24,8 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useAppDispatch, useAppSelector } from "@/hooks/store.hook";
-import { changePassword } from "@/store/Features/user.slice";
+// import { useAppDispatch, useAppSelector } from "@/hooks/store.hook";
+// import { changePassword } from "@/store/Features/user.slice";
 // import { useAppSelector } from "@/hooks/store.hook";
 
 // Define the color scheme
@@ -86,7 +86,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Navbar = () => {
   const currentPathName = usePathname();
   const router = useRouter();
-  const dispatch = useAppDispatch();
   // let { isLoading } = useAppSelector((store) => store.userS);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =

@@ -9,7 +9,6 @@ import {
   Link,
   Divider,
   CircularProgress,
-  FormHelperText,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useFormik } from "formik";
@@ -237,7 +236,7 @@ export default function LoginForm() {
           </Button>
 
           <Typography variant="body2" sx={{ mt: 3 }}>
-            Don't have an account?{" "}
+            Don`t have an account?{" "}
             <Link href="signup" color="primary">
               Sign up
             </Link>
